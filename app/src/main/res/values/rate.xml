@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="rate" parent="Theme.AppCompat">
+        <item name="colorControlNormal">#FF4081</item>
+        <item name="colorControlActivated">#9F489B</item>
+    </style>
+</resources>

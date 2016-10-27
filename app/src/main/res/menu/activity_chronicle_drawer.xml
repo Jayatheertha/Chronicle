@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/chronicle"
+            android:icon="@drawable/ic_book_black_24dp"
+            android:checked="true"
+            android:title="Chronicle" />
+                <item
+                    android:id="@+id/tag1"
+                    android:icon="@drawable/ic_label_outline_black_24dp"
+                    android:title="Tags" />
+                <item
+                    android:id="@+id/tag2"
+                    android:icon="@drawable/ic_edit_location_black_24dp"
+                    android:title="Location Tags" />
+
+    </group>
+
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/about"
+                android:title="About Us" />
+            <item
+                android:id="@+id/Feedback"
+                android:title="Feedback" />
+        </menu>
+    </item>
+
+</menu>

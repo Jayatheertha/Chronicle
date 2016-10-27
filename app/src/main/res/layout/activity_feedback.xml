@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_feedback"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#6A1B9A"
+    android:fitsSystemWindows="true"
+    tools:context="com.jaysmec.chronicle.Feedback">
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratebar"
+        android:theme="@style/RatingBar"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="78dp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="61dp"
+        android:layout_below="@+id/ratebar"
+        android:textColorHint="#69F0AE"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textInputLayout">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|left"
+            android:hint="Feedback"
+            android:textColor="#69F0AE"
+            android:id="@+id/feedba"
+            android:maxLines="8"
+            android:inputType="textAutoComplete|textMultiLine|textAutoCorrect|textCapSentences"
+            android:textSize="20dp"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:layout_width="30pt"
+        android:layout_height="30pt"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:id="@+id/sendingf"
+        android:drawableStart="@drawable/ic_arrow_forward_black_24dp"
+        android:drawableLeft="@drawable/ic_arrow_forward_black_24dp"
+        android:paddingLeft="10pt"
+        android:background="@drawable/roundgreen"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11pt" />
+
+</RelativeLayout>

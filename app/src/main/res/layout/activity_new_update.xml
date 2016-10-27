@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_entry"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jaysmec.chronicle.NewUpdate"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        app:titleTextAppearance="@style/toolbartext"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:contentInsetLeft="2dp"
+        app:contentInsetStart="2dp">
+    </android.support.v7.widget.Toolbar>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top|left"
+        android:fitsSystemWindows="true"
+        android:hint="Write here"
+        android:textSize="14dp"
+        android:padding="5pt"
+        android:maxLines="23"
+        android:background="@drawable/entrytext"
+        android:scrollbars = "vertical"
+        android:inputType="textAutoComplete|textAutoCorrect|textMultiLine"
+        android:id="@+id/text2"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2pt"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="36dp"
+            android:background="@drawable/ic_arrow_back_black_24dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8 december"
+            android:textStyle="bold"
+            android:layout_marginLeft="5pt"
+            android:id="@+id/date3"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5pt"
+            android:textStyle="bold"
+            android:text="time2"
+            android:id="@+id/time"
+            />
+
+        <Button
+            android:layout_width="49dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="60pt"
+            android:id="@+id/date2"
+            android:textColor="@android:color/holo_blue_dark"
+            android:background="@drawable/ic_event_black_24dp"
+            android:layout_weight="0.14" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:id="@+id/relativeLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/linearLayout"
+        android:layout_toEndOf="@+id/linearLayout">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tagandloc"
+            android:background="#EEEEEE"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_marginBottom="2pt"
+            android:layout_alignParentTop="true">
+            <EditText
+                android:layout_width="130pt"
+                android:layout_height="20pt"
+                android:hint="tag   "
+                android:drawableLeft="@drawable/ic_label_outline_black_24dp"
+                android:paddingLeft="8pt"
+                android:textSize="18dp"
+                android:layout_marginLeft="2pt"
+                android:inputType="text"
+                android:layout_marginRight="5pt"
+                android:layout_gravity="center"
+                android:background="@drawable/edittext"
+                android:imeOptions="actionDone"
+                android:id="@+id/tagentry"
+                android:layout_weight="0.92" />
+            <Button
+                android:layout_width="20pt"
+                android:layout_height="19pt"
+                android:id="@+id/locate"
+                android:onClick="editloc"
+                android:background="@drawable/place_confirm24dp"/>
+
+            <Button
+                android:layout_width="20pt"
+                android:layout_height="19pt"
+                android:visibility="gone"
+                android:id="@+id/tempentry"
+                android:layout_marginLeft="5pt"
+                android:background="@drawable/ic_cloud_black_24dp"/>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollViewmain"
+    android:fillViewport="true">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/forgetpasscode"
+    android:layout_height="match_parent"
+    android:padding="2pt"
+    tools:context="com.jaysmec.chronicle.MainActivity"
+    android:orientation="vertical"
+    android:background="@color/main_back"
+    android:gravity="center">
+    <TextView
+        android:layout_marginTop="6pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Password"
+        android:id="@+id/pass"
+        android:textColor="@color/text_white"
+        android:textSize="10pt"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8pt"
+            android:text="Forgot Password?"
+            android:textAllCaps="false"
+            android:textColor="#d50000"
+            android:visibility="gone"
+            android:id="@+id/forgot"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="13pt"
+        android:layout_marginBottom="18pt"
+        android:padding="8pt">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16pt"
+            android:id="@+id/one"
+            android:textColor="@color/password"
+            android:text="*"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16pt"
+            android:layout_marginLeft="4pt"
+            android:id="@+id/two"
+            android:textColor="@color/password"
+            android:layout_weight="1"
+            android:text="*"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16pt"
+            android:layout_marginLeft="4pt"
+            android:id="@+id/thr"
+            android:textColor="@color/password"
+            android:text="*"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16pt"
+            android:layout_marginLeft="4pt"
+            android:layout_weight="1"
+            android:textColor="@color/password"
+            android:id="@+id/fou"
+            android:text="*"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:layout_width="50pt"
+            android:textColor="@color/text_white"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="28dp"
+            android:id="@+id/o1"
+            android:background="@drawable/ripple"/>
+        <Button
+            android:layout_width="50pt"
+            android:layout_height="wrap_content"
+            android:textSize="28dp"
+            android:textColor="@color/text_white"
+            android:text="2"
+            android:id="@+id/o2"
+            android:background="@drawable/ripple"/>
+        <Button
+            android:layout_width="50pt"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_white"
+            android:text="3"
+            android:textSize="13pt"
+            android:id="@+id/o3"
+            android:background="@drawable/ripple"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7pt">
+
+        <Button
+            android:layout_width="50pt"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_white"
+            android:textSize="28dp"
+            android:text="4"
+            android:id="@+id/o4"
+            android:background="@drawable/ripple"/>
+        <Button
+            android:layout_width="50pt"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_white"
+            android:text="5"
+            android:textSize="28dp"
+            android:id="@+id/o5"
+            android:background="@drawable/ripple"/>
+        <Button
+            android:layout_width="50pt"
+            android:layout_height="wrap_content"
+            android:text="6"
+            android:textColor="@color/text_white"
+            android:id="@+id/o6"
+            android:textSize="28dp"
+            android:background="@drawable/ripple"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:layout_width="50pt"
+            android:layout_height="wrap_content"
+            android:text="7"
+            android:id="@+id/o7"
+            android:textColor="@color/text_white"
+            android:textSize="28dp"
+            android:background="@drawable/ripple"/>
+        <Button
+            android:layout_width="50pt"
+            android:layout_height="wrap_content"
+            android:text="8"
+            android:textSize="28dp"
+            android:textColor="@color/text_white"
+            android:id="@+id/o8"
+            android:background="@drawable/ripple"/>
+        <Button
+            android:layout_width="50pt"
+            android:layout_height="wrap_content"
+            android:text="9"
+            android:textColor="@color/text_white"
+            android:textSize="28dp"
+            android:id="@+id/o9"
+            android:background="@drawable/ripple"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="50pt"
+            android:layout_height="22pt"
+            android:id="@+id/con"
+            android:background="@drawable/ripple"
+            android:src="@drawable/ic_check_black_24dp" />
+        <Button
+            android:layout_width="50pt"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="13pt"
+            android:textColor="@color/text_white"
+            android:id="@+id/o0"
+            android:background="@drawable/ripple"/>
+        <ImageView
+            android:layout_width="50pt"
+            android:layout_height="22pt"
+            android:id="@+id/back"
+            android:background="@drawable/ripple"
+            android:src="@drawable/ic_backspace_black_24dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+    </ScrollView>

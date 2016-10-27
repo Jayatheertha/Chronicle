@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_acted"
+    android:layout_width="match_parent"
+    android:padding="5pt"
+    android:layout_height="match_parent"
+    android:background="#303030"
+    android:orientation="vertical"
+    tools:context="com.jaysmec.chronicle.MainActed"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Chronicle"
+        android:textSize="12pt"
+        android:layout_margin="8pt"
+        android:textColor="#FFFFFF"
+
+        android:layout_gravity="center"
+        android:id="@+id/textView2" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50pt"
+        android:visibility="visible"
+        android:id="@+id/visi"
+        android:src="@drawable/notebook"
+        android:layout_weight="0.16" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="20pt"
+        android:layout_height="wrap_content"
+        android:textColorHint="#69F0AE">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:backgroundTint="#69F0AE"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#69F0AE"
+            android:inputType="textAutoComplete|textCapWords"
+            android:maxLength="22"
+            android:imeOptions="actionNext"
+            android:id="@+id/Name"
+            android:layout_marginBottom="5pt"
+            android:textSize="8pt"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#69F0AE">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:hint="Password"
+            android:maxLength="4"
+            android:textColorHint="#69F0AE"
+            android:imeOptions="actionNext"
+            android:id="@+id/pass"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="5pt"
+            android:textSize="8pt"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#69F0AE">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:inputType="numberPassword"
+            android:textColorHint="#69F0AE"
+            android:maxLength="4"
+            android:id="@+id/con"
+            android:imeOptions="actionNext"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8pt"
+            android:textSize="8pt"/>
+    </android.support.design.widget.TextInputLayout>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2pt"
+        android:id="@+id/spin">
+
+    </Spinner>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#69F0AE">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Answer"
+        android:inputType="text"
+        android:textColorHint="#69F0AE"
+        android:maxLength="25"
+        android:id="@+id/answer"
+        android:imeOptions="actionDone"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8pt"
+        android:textSize="8pt"/>
+    </android.support.design.widget.TextInputLayout>
+    <Button
+        android:layout_width="30pt"
+        android:layout_height="30pt"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="10pt"
+        android:id="@+id/proceed"
+        android:drawableStart="@drawable/ic_arrow_forward_black_24dp"
+        android:drawableLeft="@drawable/ic_arrow_forward_black_24dp"
+        android:paddingLeft="10pt"
+        android:background="@drawable/round"/>
+
+
+
+</LinearLayout>
+</ScrollView>
