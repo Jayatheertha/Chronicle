@@ -23,6 +23,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.test.mock.MockPackageManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -54,12 +55,14 @@ public class Entry extends AppCompatActivity implements LocationListener {
     DatePicker dp;
     boolean dateafter;
     int hour, minute, day, month, year;
-    String  datee, timee, locee, tempee;
+    String datee, timee, locee, tempee;
     RelativeLayout rl;
     LinearLayout l1;
     boolean valid;
     long timil, id;
     ProgressBar bar;
+    private static final int REQUEST_CODE_PERMISSION = 2;
+    String mPermission = Manifest.permission.ACCESS_FINE_LOCATION;
 
     @Override
     public void onBackPressed() {
@@ -102,6 +105,18 @@ public class Entry extends AppCompatActivity implements LocationListener {
         day = dp.getDayOfMonth();
         month = dp.getMonth();
         year = dp.getYear();
+        try {
+            if (ActivityCompat.checkSelfPermission(this, mPermission)
+                    != MockPackageManager.PERMISSION_GRANTED) {
+
+                ActivityCompat.requestPermissions(this,
+                        new String[]{mPermission}, REQUEST_CODE_PERMISSION);
+
+                // If any permission above not allowed by user, this condition will execute every time, else your else part will work
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
         tb = (Toolbar) findViewById(R.id.toolbar);
@@ -142,7 +157,7 @@ public class Entry extends AppCompatActivity implements LocationListener {
             if (location != null) {
                 double latitude = location.getLatitude();
                 double longitude = location.getLongitude();
-                if(isOnline()) {
+                if (isOnline()) {
                     Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
                     try {
                         List<Address> listAddresses = geocoder.getFromLocation(latitude, longitude, 1);
@@ -152,19 +167,17 @@ public class Entry extends AppCompatActivity implements LocationListener {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                }
-                else {
+                } else {
                     locee = "" + longitude + ", " + latitude;
                     locate.setBackgroundResource(R.drawable.place_disabled24dp);
                     locate.setVisibility(View.VISIBLE);
-                    Snackbar.make(findViewById(R.id.activity_entry),"Internet is Disabled",Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(findViewById(R.id.activity_entry), "Internet is Disabled", Snackbar.LENGTH_SHORT).show();
                     bar.setVisibility(View.GONE);
                 }
             }
         }
 
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 500, (LocationListener) this);
-
 
 
         entr.addTextChangedListener(new TextWatcher() {
@@ -211,6 +224,56 @@ public class Entry extends AppCompatActivity implements LocationListener {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.entry_menu, menu);
         return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_CODE_PERMISSION) {
+            if (grantResults.length == 1 &&
+                    grantResults[0] == MockPackageManager.PERMISSION_GRANTED) {
+                LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    //    ActivityCompat#requestPermissions
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for ActivityCompat#requestPermissions for more details.
+                    return;
+                }
+                Location location = locationManager
+                        .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                if (location != null) {
+                    double latitude = location.getLatitude();
+                    double longitude = location.getLongitude();
+                    if (isOnline()) {
+                        Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
+                        try {
+                            List<Address> listAddresses = geocoder.getFromLocation(latitude, longitude, 1);
+                            if (null != listAddresses && listAddresses.size() > 0) {
+                                locee = (listAddresses.get(0).getAddressLine(1));
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        locee = "" + longitude + ", " + latitude;
+                        locate.setBackgroundResource(R.drawable.place_disabled24dp);
+                        locate.setVisibility(View.VISIBLE);
+                        Snackbar.make(findViewById(R.id.activity_entry), "Internet is Disabled", Snackbar.LENGTH_SHORT).show();
+                        bar.setVisibility(View.GONE);
+                    }
+                }
+                // Success Stuff here
+
+            }
+            else{
+                // Failure Stuff
+            }
+        }
+
     }
 
     @Override

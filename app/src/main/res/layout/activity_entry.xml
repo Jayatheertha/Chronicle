@@ -101,7 +101,7 @@
                 android:layout_marginBottom="2pt"
                 android:layout_alignParentTop="true">
                 <EditText
-                    android:layout_width="130pt"
+                    android:layout_width="120pt"
                     android:layout_height="20pt"
                     android:hint="tag   "
                     android:drawableLeft="@drawable/ic_label_outline_black_24dp"
